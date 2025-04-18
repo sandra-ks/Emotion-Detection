@@ -1,0 +1,314 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'particle.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Emoticon</title>
+   <style type="text/css">
+  @media screen and (max-width: 700px) {
+    .flw{
+      margin-top:85%;
+    }
+  }
+
+   </style>
+
+<style type="text/css">
+  .button {
+    position: absolute;
+    bottom: 10px;
+    
+     /*104.5px is half of the button's width*/
+    }
+    .test{
+      height:1000px;
+    }
+</style>
+   
+  </head>
+  <body style="position:fixed;" id="particles-js">
+    <audio id="sfx"><source src="{% static 'mixkit.wav' %}"></audio>
+      
+      <h4 style="margin-top:25%;margin-bottom:-10%;">Learn Emotions</h4>
+      <div class="container" style="background-color:white;width:100%;">
+        <div style="height:100%;" id="bx1">
+        <div>
+        <img class="container" src="{%static 'excited.jpg' %}" />
+          
+
+        </div>
+
+        <center><h4>Excited</h4></center>
+        <br>
+        <center>
+        <button  onclick="playsound1()"  style="width:200px;" id="bt1"   class="button-32" role="button">Next</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx2" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{% static 'angry.jpg' %}" />
+          
+
+        </div>
+
+        <center><h4>Angry</h4></center>
+        <br>
+        <center>
+        <button  onclick="playsound1()"  style="width:80px;"  id="bt2" class="button-32" role="button">Previous</button>
+        <button  onclick="playsound1()"  style="width:80px;" id="bt3"  class="button-32" role="button">Next</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx3" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{% static 'happy.jpg' %}" />
+          
+
+        </div>
+
+        <center><h4>Happy</h4></center>
+        <br>
+        <center>
+        <button  onclick="playsound1()"  style="width:80px;"  id="bt4" class="button-32" role="button">Previous</button>
+        <button  onclick="playsound1()"  style="width:80px;" id="bt5"  class="button-32" role="button">Next</button></center>
+        <br>
+        </div>
+
+        <div id="bx4" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{% static 'sad.jpg' %}" />
+          
+
+        </div>
+
+        <center><h4>Sad</h4></center>
+        <br>
+        <center>
+        <button  onclick="playsound1()"  style="width:80px;"  id="bt6" class="button-32" role="button">Previous</button>
+        <button  onclick="playsound1()"  style="width:80px;" id="bt7"  class="button-32" role="button">Next</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx5" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{% static 'stressed.jpg' %}" />
+          
+
+        </div>
+
+        <center><h4>Stressed</h4></center>
+        <br>
+        <center>
+        <button  onclick="playsound1()"  style="width:80px;"  id="bt8" class="button-32" role="button">Previous</button>
+        <button  onclick="playsound1()"  style="width:80px;" id="bt9"  class="button-32" role="button">Finsih</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx6" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{% static 'fear.jpg' %}" />
+          
+
+        </div>
+
+        <center><h4>Fear</h4></center>
+        <br>
+        <center>
+        <button  onclick="playsound1()"  style="width:80px;"  id="bt10" class="button-32" role="button">Previous</button>
+        <button  onclick="playsound1()"  style="width:80px;" id="bt11"  class="button-32" role="button">Finsih</button></center>
+        <br>
+        </div>
+      </div>
+
+
+
+<div class="test">
+ <div>
+    <div>
+      <button onclick="playsound2()" class="button button-32">
+            Back
+      </button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#bt1").click(function(){
+  document.getElementById("bx1").style.display="none";
+  document.getElementById("bx2").style.display="block";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt2").click(function(){
+  document.getElementById("bx1").style.display="block";
+  document.getElementById("bx2").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt3").click(function(){
+  document.getElementById("bx3").style.display="block";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+<script type="text/javascript">
+  $("#bt4").click(function(){
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="block";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script> 
+
+
+<script type="text/javascript">
+  $("#bt5").click(function(){
+  document.getElementById("bx4").style.display="block";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script> 
+
+<script type="text/javascript">
+  $("#bt6").click(function(){
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="block";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt7").click(function(){
+  document.getElementById("bx5").style.display="block";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>      
+
+<script type="text/javascript">
+  $("#bt8").click(function(){
+  document.getElementById("bx5").style.display="none";
+  document.getElementById("bx4").style.display="block";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt9").click(function(){
+  document.getElementById("bx6").style.display="block";
+  document.getElementById("bx5").style.display="none";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+<script type="text/javascript">
+  $("#bt10").click(function(){
+  document.getElementById("bx6").style.display="none";
+  document.getElementById("bx5").style.display="block";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt11").click(function(){
+ window.location.href = '/dashboard';
+});
+
+</script>
+    
+    <script> 
+
+  function playsound1() {
+    
+    var sfx = document.getElementById("sfx");
+        sfx.autoplay = 'true';
+    sfx.load();
+    
+    
+    
+     setTimeout(function(){
+            return false;
+         }, 500);
+
+   
+    
+   
+    
+
+    }
+</script>
+
+ <script> 
+
+  function playsound2() {
+    
+    var sfx = document.getElementById("sfx");
+        sfx.autoplay = 'true';
+    sfx.load();
+    
+    
+    
+     setTimeout(function(){
+            window.location.href = '/dashboard';
+         }, 500);
+
+   
+    
+   
+    
+
+    }
+</script>
+<script type="text/javascript">
+  
+</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,1261 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/x-icon" href="{%static 'logo.jpg' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'particle.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Emoticon</title>
+   <style type="text/css">
+  @media screen and (max-width: 700px) {
+    .flw{
+      margin-top:85%;
+    }
+  }
+
+   </style>
+
+<style type="text/css">
+  .button {
+    position: absolute;
+    bottom: 10px;
+
+     /*104.5px is half of the button's width*/
+    }
+    .test{
+      height:1000px;
+    }
+</style>
+
+  </head>
+  <body style="position:fixed;background:#87CEEB" id="particles-js">
+    <audio id="sfx"><source src="{% static 'mixkit.wav' %}"></audio>
+      <center><h4 >Find the Emotions</h4></center>
+
+
+
+      {% if l1.index == '1' %}
+
+      <div class="container" style="background-color:white;width:100%;">
+
+
+        <div style="height:100%;" id="bx1">
+        <div>
+        <img class="container" src="{{l1.surprisevid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+        <button  onclick="playsound11(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Surprise</button> <span> </span><button  onclick="playsound12(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound13(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx2" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.fearvid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+        <button  onclick="playsound21(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <span> </span><button  onclick="playsound22(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound23(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx3" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.disgustvid.url}}" />
+
+
+        </div>
+        <br>
+        <center>
+        <button  onclick="playsound31(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button> <span> </span><button  onclick="playsound32(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound33(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Excited</button></center>
+        <br>
+        </div>
+
+        <div id="bx4" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.neutralvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound41(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button> <span> </span><button  onclick="playsound42(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <br><br><button  onclick="playsound43(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx5" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.angryvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound51(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <span> </span><button  onclick="playsound52(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound53(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx6" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.sadvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound61(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <span> </span><button  onclick="playsound62(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound63(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx7" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.happyvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound71(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <span> </span><button  onclick="playsound72(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button> <br><br><button  onclick="playsound73(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx8" style="display:none;height:100%;">
+        <div>
+        <center><img class="container" style="width:300px" src="{% static 'thumsup.png' %}" />
+        </center>
+
+        </div>
+
+        <center><h4>You have successfully completed <br> level 2!</h4></center>
+          <br>
+        <center>
+
+        <button  onclick="playsound7()"  style="width:130px;" id="bt12"  class="button-32" role="button">Finish Level 2</button></center>
+
+        <br>
+
+        </div>
+      </div>
+
+
+
+      {% elif l1.index == '2' %}
+
+      <div class="container" style="background-color:white;width:100%;">
+
+
+        <div style="height:100%;" id="bx1">
+        <div>
+        <img class="container" src="{{l1.angryvid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+       <span> </span><button  onclick="playsound12(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound13(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <button  onclick="playsound11(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> </center>
+        <br>
+        </div>
+
+
+        <div id="bx2" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.fearvid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+        <button  onclick="playsound23(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button><span> </span><button  onclick="playsound22(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound21(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> </center>
+        <br>
+        </div>
+
+
+        <div id="bx3" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.happyvid.url}}" />
+
+
+        </div>
+        <br>
+        <center>
+         <button  onclick="playsound32(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button><span> </span><button  onclick="playsound31(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound33(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Surprise</button></center>
+        <br>
+        </div>
+
+        <div id="bx4" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.sadvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound41(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button> <span> </span><button  onclick="playsound43(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <br><br><button  onclick="playsound42(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx5" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.neutralvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound51(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <span> </span><button  onclick="playsound52(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button> <br><br><button  onclick="playsound53(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx6" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.disgustvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound61(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button> <span> </span><button  onclick="playsound62(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <br><br><button  onclick="playsound63(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx7" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.surprisevid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound71(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <span> </span><button  onclick="playsound72(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button> <br><br><button  onclick="playsound73(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Surprise</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx8" style="display:none;height:100%;">
+        <div>
+        <center><img class="container" style="width:300px" src="{% static 'thumsup.png' %}" />
+        </center>
+
+        </div>
+
+        <center><h4>You have successfully completed <br> level 1</h4></center>
+          <br>
+        <center>
+
+        <button  onclick="playsound7()"  style="width:130px;" id="bt12"  class="button-32" role="button">Finish Level 1</button></center>
+
+        <br>
+
+        </div>
+      </div>
+
+
+      {% elif l1.index == '3' %}
+      <div class="container" style="background-color:white;width:100%;">
+
+
+        <div style="height:100%;" id="bx1">
+        <div>
+      <img class="container" src="{{l1.surprisevid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+        <button  onclick="playsound11(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Surprise</button> <span> </span><button  onclick="playsound12(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound13(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx2" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.fearvid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+        <button  onclick="playsound21(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <span> </span><button  onclick="playsound22(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound23(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx3" style="display:none;height:100%;">
+        <div>
+        <center><img style="width:75%" class="container" src="{{l1.disgustvid.url}}" />
+          </center>
+
+        </div>
+        <br>
+        <center>
+        <button  onclick="playsound31(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button> <span> </span><button  onclick="playsound32(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound33(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Excited</button></center>
+        <br>
+        </div>
+
+        <div id="bx4" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.neutralvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound41(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button> <span> </span><button  onclick="playsound42(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <br><br><button  onclick="playsound43(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx5" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.angryvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound51(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <span> </span><button  onclick="playsound52(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound53(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx6" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.sadvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound61(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <span> </span><button  onclick="playsound62(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound63(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx7" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.happyvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound71(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <span> </span><button  onclick="playsound72(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button> <br><br><button  onclick="playsound73(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx8" style="display:none;height:100%;">
+        <div>
+        <center><img class="container" style="width:300px" src="{% static 'thumsup.png' %}" />
+        </center>
+
+        </div>
+
+        <center><h4>You have successfully completed <br> level 2!</h4></center>
+          <br>
+        <center>
+
+        <button  onclick="playsound7()"  style="width:130px;" id="bt12"  class="button-32" role="button">Finish Level 2</button></center>
+
+        <br>
+
+        </div>
+      </div>
+
+      {% else %}
+
+      <div class="container" style="background-color:white;width:100%;">
+
+
+        <div style="height:100%;" id="bx1">
+        <div>
+        <img class="container" src="{{l1.angryvid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+       <span> </span><button  onclick="playsound12(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound13(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <button  onclick="playsound11(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> </center>
+        <br>
+        </div>
+
+
+        <div id="bx2" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.fearvid.url}}" />
+
+
+        </div>
+
+
+        <br>
+        <center>
+        <button  onclick="playsound23(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button><span> </span><button  onclick="playsound22(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Angry</button> <br><br><button  onclick="playsound21(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> </center>
+        <br>
+        </div>
+
+
+        <div id="bx3" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.happyvid.url}}" />
+
+
+        </div>
+        <br>
+        <center>
+         <button  onclick="playsound32(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button><span> </span><button  onclick="playsound31(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound33(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Surprise</button></center>
+        <br>
+        </div>
+
+        <div id="bx4" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.sadvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound41(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Fear</button> <span> </span><button  onclick="playsound43(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <br><br><button  onclick="playsound42(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx5" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.neutralvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound51(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <span> </span><button  onclick="playsound52(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Neutral</button> <br><br><button  onclick="playsound53(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button></center>
+        <br>
+        </div>
+
+
+        <div id="bx6" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.disgustvid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound61(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Disgust</button> <span> </span><button  onclick="playsound62(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <br><br><button  onclick="playsound63(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx7" style="display:none;height:100%;">
+        <div>
+        <img class="container" src="{{l1.surprisevid.url}}" />
+
+
+        </div>
+
+        <br>
+        <center>
+        <button  onclick="playsound71(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Sad</button> <span> </span><button  onclick="playsound72(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Happy</button> <br><br><button  onclick="playsound73(this)"  style="width:150px;" id="{{kid.id}}"   class="button-32" role="button">Surprise</button>
+
+        </center>
+        <br>
+        </div>
+
+
+        <div id="bx8" style="display:none;height:100%;">
+        <div>
+        <center><img class="container" style="width:300px" src="{% static 'thumsup.png' %}" />
+        </center>
+
+        </div>
+
+        <center><h4>You have successfully completed <br> Level 2</h4></center>
+          <br>
+        <center>
+
+        <button  onclick="playsound7()"  style="width:130px;" id="bt12"  class="button-32" role="button">Finish Level 2</button></center>
+
+        <br>
+
+        </div>
+      </div>
+
+      {%endif%}
+
+ <form id="kidst" hidden method="POST" enctype=" multipart/form-data">
+        {% csrf_token %}
+    <input  type="text" name="kid" value="{{kid.id}}">
+</form>
+
+<div class="test">
+ <div>
+    <div>
+      <button onclick="playsound2()" class="button button-32">
+            Back
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<button hidden='hidden' type="button" class="btn btn-primary" data-toggle="modal" id="wrongmodal" data-target="#exampleModal">
+      Launch Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Wrong Answer</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+      </div>
+    </div>
+<script type="text/javascript">
+  function playsound11(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx1").style.display="none";
+        document.getElementById("bx2").style.display="block";
+
+      }
+
+</script>
+
+<script type="text/javascript">
+  function playsound23(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx2").style.display="none";
+        document.getElementById("bx3").style.display="block";
+
+      }
+
+</script>
+
+<script type="text/javascript">
+  function playsound31(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx3").style.display="none";
+        document.getElementById("bx4").style.display="block";
+
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound43(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx4").style.display="none";
+        document.getElementById("bx5").style.display="block";
+
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound52(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx5").style.display="none";
+        document.getElementById("bx6").style.display="block";
+
+      }
+
+</script>
+
+
+
+
+<script type="text/javascript">
+  function playsound61(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx6").style.display="none";
+        document.getElementById("bx7").style.display="block";
+
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  function savecardpay(obj) {
+        const saveid = $(this).attr('id')
+        console.log(saveid)
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound73(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx7").style.display="none";
+        document.getElementById("bx8").style.display="block";
+
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound8(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        var form = document.getElementById("kidst");
+        form.submit();
+
+      }
+
+</script>
+
+<script type="text/javascript">
+  function playsound12(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+  console.log(id)
+
+    $.ajax({
+        type: 'POST',
+        url: '/l1-accuracy',
+        data: {
+
+            'kid':id,
+
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        success: function(response) {
+            console.log('success', response)
+        },
+        error: function(response) {
+            console.log('error', response)
+        }
+  })
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound13(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound21(obj) {
+  $("#wrongmodal").click();
+    var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound22(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound32(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+  function playsound33(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound41(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+  console.log(id)
+
+    $.ajax({
+        type: 'POST',
+        url: '/l1-accuracy',
+        data: {
+
+            'kid':id,
+
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        success: function(response) {
+            console.log('success', response)
+        },
+        error: function(response) {
+            console.log('error', response)
+        }
+  })
+}
+
+</script>
+
+<script type="text/javascript">
+  function playsound42(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+  console.log(id)
+
+    $.ajax({
+        type: 'POST',
+        url: '/l1-accuracy',
+        data: {
+
+            'kid':id,
+
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        success: function(response) {
+            console.log('success', response)
+        },
+        error: function(response) {
+            console.log('error', response)
+        }
+  })
+}
+
+</script>
+
+<script type="text/javascript">
+  function playsound51(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound53(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+  function playsound63(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound62(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+        console.log(id)
+
+          $.ajax({
+              type: 'POST',
+              url: '/l1-accuracy',
+              data: {
+
+                  'kid':id,
+
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+              },
+              success: function(response) {
+                  console.log('success', response)
+              },
+              error: function(response) {
+                  console.log('error', response)
+              }
+        })
+
+
+}
+
+</script>
+
+<script type="text/javascript">
+  function playsound72(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+  console.log(id)
+
+    $.ajax({
+        type: 'POST',
+        url: '/l1-accuracy',
+        data: {
+
+            'kid':id,
+
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        success: function(response) {
+            console.log('success', response)
+        },
+        error: function(response) {
+            console.log('error', response)
+        }
+  })
+}
+
+</script>
+
+
+<script type="text/javascript">
+  function playsound71(obj) {
+  $("#wrongmodal").click();
+  var id = obj.id;
+  console.log(id)
+
+    $.ajax({
+        type: 'POST',
+        url: '/l1-accuracy',
+        data: {
+
+            'kid':id,
+
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        success: function(response) {
+            console.log('success', response)
+        },
+        error: function(response) {
+            console.log('error', response)
+        }
+  })
+}
+
+</script>
+
+<script type="text/javascript">
+  $("#bt4").click(function(){
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="block";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt5").click(function(){
+  document.getElementById("bx4").style.display="block";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+<script type="text/javascript">
+  $("#bt6").click(function(){
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="block";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt7").click(function(){
+  document.getElementById("bx5").style.display="block";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+<script type="text/javascript">
+  $("#bt8").click(function(){
+  document.getElementById("bx5").style.display="none";
+  document.getElementById("bx4").style.display="block";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt9").click(function(){
+  document.getElementById("bx6").style.display="block";
+  document.getElementById("bx5").style.display="none";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+<script type="text/javascript">
+  $("#bt10").click(function(){
+  document.getElementById("bx6").style.display="none";
+  document.getElementById("bx5").style.display="block";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt11").click(function(){
+  document.getElementById("bx7").style.display="block";
+  document.getElementById("bx6").style.display="none";
+  document.getElementById("bx5").style.display="none";
+  document.getElementById("bx4").style.display="none";
+  document.getElementById("bx3").style.display="none";
+  document.getElementById("bx2").style.display="none";
+  document.getElementById("bx1").style.display="none";
+
+
+
+});
+
+</script>
+
+
+<script type="text/javascript">
+  $("#bt12").click(function(){
+  var form = document.getElementById("kidst");
+  form.submit();
+
+});
+
+</script>
+
+    <script>
+
+  function playsound1() {
+
+    var sfx = document.getElementById("sfx");
+        sfx.autoplay = 'true';
+    sfx.load();
+
+
+
+     setTimeout(function(){
+            return false;
+         }, 500);
+
+
+
+
+
+
+    }
+</script>
+
+ <script>
+
+  function playsound2() {
+
+    var sfx = document.getElementById("sfx");
+        sfx.autoplay = 'true';
+    sfx.load();
+
+
+
+     setTimeout(function(){
+            window.location.href = '/select-kid2';
+         }, 500);
+
+
+
+
+
+
+    }
+</script>
+<script type="text/javascript">
+
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

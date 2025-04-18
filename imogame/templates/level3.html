@@ -1,0 +1,308 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/x-icon" href="{%static 'logo.jpg' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'particle.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cldup.com/S6Ptkwu_qA.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Emoticon</title>
+   <style type="text/css">
+  @media screen and (max-width: 700px) {
+    .flw{
+      margin-top:85%;
+    }
+  }
+
+   </style>
+
+<style type="text/css">
+  .button {
+    position: absolute;
+    bottom: 10px;
+    
+     /*104.5px is half of the button's width*/
+    }
+    .test{
+      height:1000px;
+    }
+</style>
+   
+  </head>
+  <body style="position:fixed;" id="particles-js">
+    <audio id="sfx"><source src="{% static 'mixkit.wav' %}"></audio>
+      <center><img style="margin-top:6%;" width="100" src="{%static 'logo.png' %}"></center>
+      <center><h4 >Find the Emotions</h4></center>
+
+      <div class="container" style="background-color:white;width:100%;">
+        
+
+      <div style="height:100%;" id="bx1">
+        <div>
+        <center><img style="width:270px" class="container" src="{{l1.emot.url}}" ></center>
+          
+
+        </div>
+
+  
+        <br>
+        <center>
+       <span> </span><h4>Imitate the Above Emotion</h4> <br><br><button  onclick="playsound1(this)"  style="width:150px;" id="start-camera"   class="button-32" role="button">Imitate</button></center>
+        <br>
+      </div>
+
+      <div style="height:100%;display:none;" id="bx2">
+        <div>
+          <br>
+          <br>
+          <center>
+            
+          <video id="video" width="320" height="240" autoplay></video>
+          </center>
+
+          <center>
+            <canvas style="display:none;" id="canvas" width="320" height="240"></canvas>
+          </center>
+
+        </div>
+
+  
+        <br>
+        <center>
+       <span> </span><br><br><button  style="width:150px;" id="click-photo"   class="button-32" role="button">Click Photo</button></center>
+        <br>
+      </div>
+
+
+        
+
+
+        <div id="bx3" style="display:none;height:100%;">
+        <div>
+        <center><img class="container" style="width:300px" src="{% static 'thumsup.png' %}" />
+        </center>
+
+        </div>
+
+        <center><h4>You Are Successfully Completed <br> Level 3</h4></center>
+          <br>
+        <center>
+
+        <button  onclick="playsound7()"  style="width:130px;" id="bt12"  class="button-32" role="button">Finish Level 3</button></center>
+       
+        <br>
+
+        </div>
+
+
+         <div id="bx4" style="display:none;height:100%;">
+        <div>
+        <center><img class="container" style="width:300px" src="{% static 'dislike.jpg' %}" />
+        </center>
+
+        </div>
+
+        <center><h4>You have failed  Complete <br> Level 3</h4></center>
+          <br>
+        <center>
+
+        <button  onclick="playsound9(this)"  style="width:130px;" id="{{kid.id}}"  class="button-32" role="button">Restart Level 3</button></center>
+       
+        <br>
+
+        </div>
+      </div>
+
+
+
+ <form id="kidst" hidden method="POST" enctype=" multipart/form-data">
+        {% csrf_token %}
+    <input  type="text" name="kid" value="{{kid.id}}">
+</form>
+
+<div class="test">
+ <div>
+    <div>
+      <button onclick="playsound2()" class="button button-32">
+            Back
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<button hidden='hidden' type="button" class="btn btn-primary" data-toggle="modal" id="wrongmodal" data-target="#exampleModal">
+      Launch Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Wrong Answer</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+  $("#bt12").click(function(){
+  var form = document.getElementById("kidst");
+  form.submit();
+  
+});
+
+</script>
+
+<script type="text/javascript">
+  function playsound1(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        document.getElementById("bx1").style.display="none";
+        document.getElementById("bx2").style.display="block";
+        
+      }
+
+</script>
+
+
+
+<script type="text/javascript">
+  function playsound7(obj) {
+        var sfx = document.getElementById("sfx");
+        sfx.autoplay = "true";
+        sfx.load();
+        var id = obj.id;
+
+        setTimeout(function () {
+          window.location.href = "/level3/" +  id;
+        }, 500);
+        console.log(id)
+        
+      }
+
+</script>
+
+<script type="text/javascript">
+  function playsound9(obj) {
+  var id = obj.id;
+  console.log(id)
+  
+    $.ajax({
+        type: 'POST',
+        url: '/l3-accuracy',
+        data: {
+
+            'kid':id,
+
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+            
+        },
+        success: function(response) {
+           window.location.href = "/level3/" +  id;
+        },
+        error: function(response) {
+            console.log('error', response)
+        }
+  })
+}
+
+</script>
+
+
+ <script> 
+
+  function playsound2() {
+    
+    var sfx = document.getElementById("sfx");
+        sfx.autoplay = 'true';
+    sfx.load();
+    
+    
+    
+     setTimeout(function(){
+            window.location.href = '/select-kid2';
+         }, 500);
+
+   
+    
+   
+    
+
+    }
+</script>
+<script type="text/javascript">
+let camera_button = document.querySelector("#start-camera");
+let video = document.querySelector("#video");
+let click_button = document.querySelector("#click-photo");
+let canvas = document.querySelector("#canvas");
+
+camera_button.addEventListener('click', async function() {
+    let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    video.srcObject = stream;
+});
+
+click_button.addEventListener('click', function() {
+
+    document.getElementById("video").style.display="none";
+    document.getElementById("canvas").style.display="block";
+        
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+    let image_data_url = canvas.toDataURL('image/jpeg');
+
+    // data url of the image
+    console.log(image_data_url);
+    $.ajax({
+        type: 'POST',
+        url: '/vids-class',
+        data: {
+
+            'cfile':image_data_url,
+            'name':'{{kid.name}}',
+            'emot':'{{l1.name}}',
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+            
+        },
+        success: function(response) {
+            console.log('success', response)
+            if (response == 'Success'){
+            document.getElementById("bx1").style.display="none";
+            document.getElementById("bx2").style.display="none";
+            document.getElementById("bx3").style.display="block";
+          }
+          else{
+            document.getElementById("bx1").style.display="none";
+            document.getElementById("bx2").style.display="none";
+            document.getElementById("bx4").style.display="block";
+          }
+        },
+        error: function(response) {
+            console.log('error', response)
+
+        }
+  })
+});
+</script>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
